@@ -12,7 +12,6 @@ Feature: Authorized client views workspace
     And Client has no indices
     When Client requests to view their workspace with their access token
     Then Client receives a response that contains the following Elements:
-      | Elements           |
       | Account identifier |
       | index-list         |
     And "index-list" is empty
@@ -23,7 +22,6 @@ Feature: Authorized client views workspace
     And Client creates index with their access token
     When Client requests to view their workspace with their access token
     Then Client receives a response that contains the following Elements:
-      | Elements           |
       | Account identifier |
       | index-list         |
     And "index-list" contains all existing indices
