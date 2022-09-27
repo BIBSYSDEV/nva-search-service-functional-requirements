@@ -74,9 +74,10 @@ Feature: An Authenticated API Client does anything else on an index
     When Authenticated Client requests to do X on a non-owned index
     Then Authenticated Client receives a response from the search engine
     And Authenticated Client receives a response indicating that the specified index does not exist
+    
+    
+Rule: Root operations are not allowed
 
-
-
-
-
-
+  Scenario: Authenticated API Client requests a root operation (i.e. an operation starting with _, f.eks. _cat)
+    When Authenticated API Client requests a root operation
+    Then Authenticated Client recieves a Bad Request response
